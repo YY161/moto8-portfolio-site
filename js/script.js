@@ -10,12 +10,13 @@ $(function() {
   });
 
   $(window).scroll(function() {
-    $('.fadein').each(function() {
+    $('.animation').each(function() {
       var elemPos = $(this).offset().top;
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
       if (scroll > elemPos - windowHeight + windowHeight / 2 && !$(this).hasClass("active")) {
         $(this).addClass("active");
+        $('.big-avatar').addClass("active");
       }
     });
   });

@@ -101,10 +101,6 @@ header {
   margin: 0 auto;
 }
 
-.fadein {
-  opacity: 0;
-}
-
 .heading {
   text-align: center;
   margin-bottom: 20px;
@@ -145,11 +141,6 @@ footer {
   text-align: center;
   color: #fff;
   font-size: 58px;
-}
-
-.active {
-  -webkit-animation: slideUp 0.5s ease 0s 1 normal both running;
-  animation: slideUp 0.5s ease 0s 1 normal both running;
 }
 
 .about, .skill, .activities {
@@ -285,31 +276,140 @@ footer {
   background-color: #329966;
 }
 
-@keyframes fadeIn {
+/* animationプロパティ 開始 */
+
+.hidden {
+  overflow: hidden;
+}
+
+.profile {
+  -webkit-transform: translateX(-960px);
+  -ms-transform: translateX(-960px);
+  transform: translateX(-960px);
+}
+
+.big-avatar {
+  -webkit-transform: translateY(340px);
+  -ms-transform: translateY(340px);
+  transform: translateY(340px);
+}
+
+.language {
+  -webkit-transform: rotateY(-90deg);
+  -ms-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+}
+
+.activity:nth-child(1) {
+  -webkit-transform: translateX(-960px);
+  -ms-transform: translateX(-960px);
+  transform: translateX(-960px);
+}
+
+.activity:nth-child(2) {
+  -webkit-transform: translateX(960px);
+  -ms-transform: translateX(960px);
+  transform: translateX(960px);
+}
+
+.active.profile {
+  -webkit-animation: profileAnimation 0.5s ease 0s 1 normal both running;
+  animation: profileAnimation 0.5s ease 0s 1 normal both running;
+}
+
+.active.big-avatar {
+  -webkit-animation: bigAvatarAnimation 0.5s ease 0s 1 normal both running;
+  animation: bigAvatarAnimation 0.5s ease 0s 1 normal both running;
+}
+
+.active.language {
+  -webkit-animation: languageAnimation 0.8s ease-in 0s 1 normal both running;
+  animation: languageAnimation 0.8s ease-in 0s 1 normal both running;
+}
+
+.active.activity:nth-child(1) {
+  -webkit-animation: firstActivityAnimation 0.5s ease 0s 1 normal both running;
+  animation: firstActivityAnimation 0.5s ease 0s 1 normal both running;
+}
+
+.active.activity:nth-child(2) {
+  -webkit-animation: secondActivityAnimation 0.5s ease 0s 1 normal both running;
+  animation: secondActivityAnimation 0.5s ease 0s 1 normal both running;
+}
+
+@keyframes profileAnimation {
   0% {
-    opacity: 0;
+    -webkit-transform: translateX(-960px);
+    -ms-transform: translateX(-960px);
+    transform: translateX(-960px);
   }
 
   100% {
-    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
   }
 }
 
-@keyframes slideUp {
+@keyframes bigAvatarAnimation {
   0% {
-    -webkit-transform: translateY(30px);
-    -ms-transform: translateY(30px);
-    transform: translateY(30px);
-    opacity: 0;
+    -webkit-transform: translateY(340px);
+    -ms-transform: translateY(340px);
+    transform: translateY(340px);
   }
 
   100% {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
-    opacity: 1;
   }
 }
+
+@keyframes languageAnimation {
+  0% {
+    -webkit-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes firstActivityAnimation {
+  0% {
+    -webkit-transform: translateX(-960px);
+    -ms-transform: translateX(-960px);
+    transform: translateX(-960px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes secondActivityAnimation {
+  0% {
+    -webkit-transform: translateX(960px);
+    -ms-transform: translateX(960px);
+    transform: translateX(960px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+/* animationプロパティ 終了 */
+
+/* マルチ解像度対応 開始 */
 
 @media screen and (max-width: 600px) {
   p {
@@ -363,3 +463,5 @@ footer {
     margin: 20px auto 0 auto;
   }
 }
+
+/* マルチ解像度対応 終了 */
